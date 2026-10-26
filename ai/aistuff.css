@@ -1,0 +1,125 @@
+:root {
+  color-scheme: light;
+  --page-background: #000000;
+  --sidebar-background: #1e1e1e;
+  --card-background: #393939;
+  --text-color: #c9c9c9;
+  --muted-color: #adadad;
+  --accent-color: #ffffff;
+  --border-color: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  margin: 0;
+  background: var(--page-background);
+  color: var(--text-color);
+  font-family: Arial, sans-serif;
+}
+
+.sidebar {
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex: 0 0 240px;
+  flex-direction: column;
+  gap: 2rem;
+  height: 100vh;
+  padding: 1.5rem;
+  background: var(--sidebar-background);
+  border-right: 1px solid var(--border-color);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: inherit;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.logo-placeholder {
+  display: grid;
+  width: 2.75rem;
+  height: 2.75rem;
+  place-items: center;
+  border-radius: 0.75rem;
+  background: var(--accent-color);
+  color: #ffffff;
+}
+
+nav {
+  display: grid;
+  gap: 0.5rem;
+}
+
+nav a {
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  color: var(--muted-color);
+  text-decoration: none;
+}
+
+nav a:hover,
+nav a[aria-current="page"] {
+  background: var(--page-background);
+  color: var(--accent-color);
+}
+
+main {
+  width: min(100%, 900px);
+  margin: 0 auto;
+  padding: 3rem;
+}
+
+.page-header {
+  margin-bottom: 2rem;
+}
+
+.eyebrow {
+  color: var(--accent-color);
+}
+
+.card {
+  margin-bottom: 1rem;
+  padding: 1.5rem;
+  border: 1px solid var(--border-color);
+  border-radius: 0.75rem;
+  background: var(--card-background);
+}
+
+@media (max-width: 640px) {
+  body {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    position: static;
+    flex-basis: auto;
+    width: 100%;
+    height: auto;
+    gap: 1rem;
+    padding: 1rem;
+    border-right: 0;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  nav {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  nav a {
+    padding: 0.6rem 0.25rem;
+    text-align: center;
+  }
+
+  main {
+    padding: 1.5rem;
+  }
+}
