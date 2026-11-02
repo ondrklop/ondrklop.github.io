@@ -19,3 +19,8 @@ h1 {
     font-family: Times New Roman, Times, serif;
     font-size: 40px;
 }
+a[href] {
+    color: rgb(0, 170, 255);
+    text-decoration: underline;
+    font-style: italic;
+}
